@@ -35,12 +35,12 @@ int Right_motor_pwm = 23;     //PWMA connects to wiringPi port 23 of Raspberry p
 void run(int time)
 {
   //Left motor advance 
-  digitalWrite(Left_motor_go, HIGH);    
-  digitalWrite(Left_motor_back, LOW);   
+  digitalWrite(Left_motor_go, HIGH);
+  digitalWrite(Left_motor_back, LOW);
   //This code is for setting the PWM of the specified pin
   softPwmWrite(Left_motor_pwm, 150);    //pwm:0-255. The left and right wheels are slightly different
 
-  //Right motor advance 
+  //Right motor advance
   digitalWrite(Right_motor_go, HIGH);   
   digitalWrite(Right_motor_back, LOW);  
   //This code is for set the PWM of the specified pin
@@ -62,22 +62,22 @@ void run(int time)
 void main()
 {
   wiringPiSetup();
-  
+
   //Initializethe motor drive IO as the output mode
-  pinMode(Left_motor_go, OUTPUT);
+  //pinMode(Left_motor_go, OUTPUT);
   pinMode(Left_motor_back, OUTPUT);
-  pinMode(Right_motor_go, OUTPUT);
+  //pinMode(Right_motor_go, OUTPUT);
   pinMode(Right_motor_back, OUTPUT);
-  
+
   //int softPwmCreate(int pin,int initialValue,int pwmRange);
-  softPwmCreate(Left_motor_pwm,0,255); 
-  softPwmCreate(Right_motor_pwm,0,255);   
-  
-  delay(2000);   
-  
+  softPwmCreate(Left_motor_pwm,0,255);
+  softPwmCreate(Right_motor_pwm,0,255);
+
+  //delay(2000);
+
   while(1)
   {
-   run(10);       
+    run(1);
   }
   return;
 }
