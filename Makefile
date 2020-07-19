@@ -1,2 +1,2 @@
 all:
-	gcc src/fan.c -lpthread -lwiringPi
+	g++ src/fan.cc -lpthread -lwiringPi -o bin/fan
