@@ -25,7 +25,7 @@ void init_signal_handler() {
 int main() {
   init_signal_handler();
 
-  robot.backward();
+  robot.forward();
 	return 0;
 }
 
